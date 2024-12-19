@@ -35,16 +35,16 @@ with open("../recipes.txt", encoding="utf-8") as file:
 			cook_li.append({"ingredient_name": arg_list[0], "quantity": arg_list[1], "measure": arg_list[2]})
 		cook_book[name] = cook_li
 
-	print("Словарь с кулинарной книгой cook_book:\n=============")
-	pprint.pprint(cook_book, sort_dicts=False)
+print("Словарь с кулинарной книгой cook_book:\n=============")
+pprint.pprint(cook_book, sort_dicts=False)
 
-	print("\nПодсчёт количества продуктов:\n=============")
-	pprint.pprint(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
+print("\nПодсчёт количества продуктов:\n=============")
+pprint.pprint(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
 
-	print("\nОбъединение файлов:\n=============")
-	with open('../result.txt', 'w', encoding='utf-8') as f:  # w в явном виде указывает, что мы хотим открыть файл для записи
-		all_files_list = convert_files_content_to_dict(["../1.txt", "../2.txt", "../3.txt"])
-		for file_item in all_files_list:
-			f.write(file_item["file_name"] + "\n"
-					+ str(file_item["file_lines"]) + "\n"
-					+ "".join(file_item["file_contain"]) + "\n")
+print("\nОбъединение файлов:\n=============")
+with open('../result.txt', 'w', encoding='utf-8') as f:  # w в явном виде указывает, что мы хотим открыть файл для записи
+	all_files_list = convert_files_content_to_dict(["../1.txt", "../2.txt", "../3.txt"])
+	for file_item in all_files_list:
+		f.write(file_item["file_name"] + "\n"
+				+ str(file_item["file_lines"]) + "\n"
+				+ "".join(file_item["file_contain"]) + "\n")
